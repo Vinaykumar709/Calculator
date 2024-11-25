@@ -50,5 +50,11 @@ pipeline {
                 sh 'mvn deploy'
             }
         }
+         stage('Stage-9 : Deployment - Deploy a Artifact Calculator-1.0.0-SNAPSHOT.war file to Tomcat Server') { 
+            steps {
+                sh 'curl -u admin:Str0ngAdminPassw3rd -T target/**.war "http://54.166.230.167:8080/manager/text/deploy?path=/devops&update=true"'
+            }
+        } 
+
     }
 }
