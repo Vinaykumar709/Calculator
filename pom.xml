@@ -19,6 +19,21 @@
         <sonar.login>sqp_7af2fd3d740bf094fc567e43d2b1f54960a2cda1</sonar.login>
     </properties>
 
+<distributionManagement>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>maven-snapshots</name>
+        <url>http://52.91.7.123:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+    
+    <repository>
+        <id>release</id>
+        <name>maven-releases</name>
+        <url>http://52.91.7.123:8081/repository/maven-releases/</url>
+    </repository>
+</distributionManagement>
+
+
     <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>

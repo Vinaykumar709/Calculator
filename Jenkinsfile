@@ -45,5 +45,10 @@ pipeline {
                 sh 'mvn install '
             }
         }
+        stage('Stage-8 : deploy') { 
+            steps {
+                sh 'mvn deploy '
+            }
+        }
     }
 }
