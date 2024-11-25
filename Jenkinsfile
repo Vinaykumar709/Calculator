@@ -45,3 +45,5 @@ pipeline {
                 sh 'mvn install '
             }
         }
+    }
+}
