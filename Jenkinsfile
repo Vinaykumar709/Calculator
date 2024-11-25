@@ -51,9 +51,9 @@ pipeline {
             }
         }
 
-          stage('Stage-9 : Deployment - Deploy a Artifact Calculator-1.0.0-SNAPSHOT.war file to Tomcat Server') { 
+          stage('Stage-9 : Deployment - Deploy a Artifact Calculator-1.0.0.jar file to Tomcat Server') { 
             steps {
-                sh 'curl -u admin:redhat@123 -T target/**.war "http://52.91.175.212:8080/manager/text/deploy?path=/Calculator&update=true"'
+                sh 'curl -u admin:redhat@123 -T target/**.jar "http://52.91.175.212:8080/manager/text/deploy?path=/Calculator&update=true"'
             }
         } 
   
