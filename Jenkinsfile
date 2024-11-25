@@ -45,9 +45,21 @@ pipeline {
                 sh 'mvn install '
             }
         }
-        stage('Stage-8 : deploy') { 
+          stage('Stage-8 : Deploy an Artifact to Artifactory Manager i.e. Nexus/Jfrog') { 
             steps {
-                sh 'mvn deploy '
+                sh 'mvn deploy'
+            }
+        }
+
+          stage('Stage-9 : Deployment - Deploy a Artifact Calculator-1.5.0-SNAPSHOT.war file to Tomcat Server') { 
+            steps {
+                sh 'curl -u admin:redhat@123 -T target/**.war "http://52.91.175.212:8080/manager/text/deploy?path=/Calculator&update=true"'
+            }
+        } 
+  
+          stage('Stage-10 : SmokeTest') { 
+            steps {
+                sh 'curl --retry-delay 10 --retry 5 "http://52.91.175.212:8080/Calculator"'
             }
         }
     }
