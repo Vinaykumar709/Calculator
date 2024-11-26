@@ -32,15 +32,12 @@
         <url>http://52.91.7.123:8081/repository/maven-releases/</url>
     </repository>
 </distributionManagement>
-
-
-    <dependencies>
+  <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-yaml</artifactId>
             <version>${jackson-dataformat-yaml.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
@@ -48,20 +45,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>3.2.2</version>
-                    <configuration>
-                        <warSourceDirectory>src/main/webapp</warSourceDirectory>
-                        <warName>devops</warName>
-                        <failOnMissingWebXml>false</failOnMissingWebXml>
-                    </configuration>
-        </pluginManagement>
-        <finalName>Calculatorm</finalName>
-    </build>
 </project>
